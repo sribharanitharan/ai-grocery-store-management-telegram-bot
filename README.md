@@ -197,25 +197,66 @@ The generated `analysis_weekly_YYYY-MM-DD.pptx` follows a **Food Market** premiu
 
 ---
 
-## 🚀 Deployment
+## 🐳 Docker Deployment & Usage
 
-### Docker
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-CMD ["python", "main.py"]
-```
+The application is containerized with a production-grade [`Dockerfile`](./Dockerfile) based on `python:3.11-slim`, with system dependencies (`libfreetype6`, `fonts-dejavu-core`) for ReportLab PDF & Matplotlib chart rendering, and unbuffered stdout for live log streaming.
 
+### 1. Build the Docker Image
 ```bash
-docker build -t nebula-bot .
-docker run -d --env-file .env \
-  -v $(pwd)/nebula_store.db:/app/nebula_store.db \
-  -v $(pwd)/output:/app/output \
-  nebula-bot
+docker build -t nebula-kirana-bot .
 ```
+
+### 2. Run the Container with Persistence
+
+#### On Windows (PowerShell):
+```powershell
+docker run -d `
+  --name nebula_bot_container `
+  --env-file .env `
+  -v "${PWD}\nebula_store.db:/app/nebula_store.db" `
+  -v "${PWD}\output:/app/output" `
+  --restart unless-stopped `
+  nebula-kirana-bot
+```
+
+#### On Linux / macOS (Bash):
+```bash
+docker run -d \
+  --name nebula_bot_container \
+  --env-file .env \
+  -v "$(pwd)/nebula_store.db:/app/nebula_store.db" \
+  -v "$(pwd)/output:/app/output" \
+  --restart unless-stopped \
+  nebula-kirana-bot
+```
+
+> **Note on Volume Mounts**:
+> * `-v .../nebula_store.db:/app/nebula_store.db` ensures your products, bills, customer credit (khata), and store preferences persist across container restarts.
+> * `-v .../output:/app/output` ensures all generated GST PDF invoices and PowerPoint PPTX decks are saved directly to your host disk.
+
+### 3. Container Management & Live Log Monitoring
+
+* **Stream Live Logs in Real Time**:
+  ```bash
+  docker logs -f nebula_bot_container
+  ```
+* **View Last 50 Log Lines**:
+  ```bash
+  docker logs --tail 50 nebula_bot_container
+  ```
+* **Check Container Status**:
+  ```bash
+  docker ps -f name=nebula_bot_container
+  ```
+* **Restart the Bot**:
+  ```bash
+  docker restart nebula_bot_container
+  ```
+* **Stop and Remove Container**:
+  ```bash
+  docker stop nebula_bot_container
+  docker rm nebula_bot_container
+  ```
 
 ### VPS (systemd service)
 ```ini
