@@ -1,5 +1,7 @@
 # 🛒 Nebula Kirana Store — AI Operations Manager
 
+> 🤖 **Live Telegram Bot**: [@nebula_store_ops_bot](https://t.me/nebula_store_ops_bot) — *Active & deployed for testing*
+
 An autonomous, multilingual AI operations manager for Indian kirana (grocery) stores, operated entirely through **Telegram**. The store owner chats naturally in any regional language or script — Hindi, Tamil, Tanglish, Telugu, Kannada, Malayalam, Marathi, Bengali, or English — to manage billing, inventory, customer credit (Khata), GST-compliant invoices, and PowerPoint sales decks end-to-end.
 
 ---
