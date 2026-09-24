@@ -1,8 +1,24 @@
 # 🛒 Nebula Kirana Store — AI Operations Manager
 
-> 🤖 **Live Telegram Bot**: [@nebula_store_ops_bot](https://t.me/nebula_store_ops_bot) — *Active & deployed for testing*
+> 🤖 **Live Telegram Bot**: [@nebula_store_ops_bot](https://t.me/nebula_store_ops_bot) — *Active & deployed for testing*  
+> 🔗 **Direct Telegram Link**: [https://t.me/nebula_store_ops_bot](https://t.me/nebula_store_ops_bot)
 
 An autonomous, multilingual AI operations manager for Indian kirana (grocery) stores, operated entirely through **Telegram**. The store owner chats naturally in any regional language or script — Hindi, Tamil, Tanglish, Telugu, Kannada, Malayalam, Marathi, Bengali, or English — to manage billing, inventory, customer credit (Khata), GST-compliant invoices, and PowerPoint sales decks end-to-end.
+
+---
+
+## ⚡ Live Testing & Evaluation Quickstart
+
+Evaluators can directly message [@nebula_store_ops_bot](https://t.me/nebula_store_ops_bot) on Telegram to test all capabilities in real time:
+
+| Test Scenario | Sample Prompt to Send the Bot | Expected Result |
+| :--- | :--- | :--- |
+| **1. Inward Stock & Preferences** | `Received 50 packets of Maggi 70g at cost 12 MRP 14. Also save my preference: default payment mode is UPI and default atta is Aashirvaad 5kg.` | Stock incremented; Preferences stored in DB |
+| **2. Multi-Item Bill & GST PDF** | `Make a bill: 2kg Sugar, 1 default atta, 4 Maggi 70g, 1 Amul Butter 100g. Finalize via UPI and send the GST PDF invoice.` | Draft created → stock checked → finalized → GST PDF invoice sent |
+| **3. Stock & Low-Stock Alerts** | `How much sugar and Maggi are left in stock? Also show what is running low or needs reordering.` | Live DB stock query + reorder diagnostics |
+| **4. Khata Credit Ledger** | `Put ₹500 on Ramesh's credit ledger, record his ₹300 cash payment, and show his final outstanding balance.` | Credit & repayment logged; remaining balance: ₹200 |
+| **5. Daily Close & PPTX Deck** | `Close today's sales summary and generate this week's sales analysis PowerPoint presentation deck.` | Sales summary calculated → 5-slide PPTX deck generated & sent |
+| **6. Store Memory across `/new`** | `/new` followed by `What is my default payment mode and default atta?` | Chat history cleared, but store memory persists! |
 
 ---
 
