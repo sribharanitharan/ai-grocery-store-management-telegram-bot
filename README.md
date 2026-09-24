@@ -24,35 +24,35 @@ An autonomous, multilingual AI operations manager for Indian kirana (grocery) st
 ## 🏛️ System Architecture
 
 ```mermaid
-graph TD
-    User([Telegram User]) <-->|Natural Language| TG[Telegram Bot — main.py]
-    TG <-->|Per-Chat Session| Agent[ChatSession — agent/session.py]
+flowchart TD
+    User(["Telegram User"]) <-->|"Natural Language"| TG["Telegram Bot (main.py)"]
+    TG <-->|"Per-Chat Session"| Agent["ChatSession (agent/session.py)"]
 
-    subgraph AI Engine — Multi-Model Rotation
-        Agent --> G1[gemini-2.0-flash]
-        Agent --> G2[gemini-1.5-flash]
-        Agent --> G3[gemini-1.5-flash-8b]
-        Agent --> G4[gemini-2.0-flash-lite]
-        Agent --> Groq[Groq LLaMA-3 Fallback]
+    subgraph AI_Engine ["AI Engine - Multi-Model Rotation"]
+        Agent --> G1["gemini-2.0-flash"]
+        Agent --> G2["gemini-1.5-flash"]
+        Agent --> G3["gemini-1.5-flash-8b"]
+        Agent --> G4["gemini-2.0-flash-lite"]
+        Agent --> Groq["Groq LLaMA-3 Fallback"]
     end
 
-    Agent <-->|Function Calling| Tools[Tool Registry]
+    Agent <-->|"Function Calling"| Tools["Tool Registry"]
 
-    subgraph Core Tool Modules
-        Tools <--> T_Inv[inventory.py — Stock CRUD]
-        Tools <--> T_Bill[billing.py — Draft → Finalize]
-        Tools <--> T_Khata[khata.py — Credit Ledger]
-        Tools <--> T_Doc[documents.py — PDF + PPTX]
-        Tools <--> T_Ana[analytics.py — Daily / Weekly]
-        Tools <--> T_Mem[memory.py — Preferences]
+    subgraph Core_Tools ["Core Tool Modules"]
+        Tools <--> T_Inv["inventory.py (Stock CRUD)"]
+        Tools <--> T_Bill["billing.py (Draft to Finalize)"]
+        Tools <--> T_Khata["khata.py (Credit Ledger)"]
+        Tools <--> T_Doc["documents.py (PDF + PPTX)"]
+        Tools <--> T_Ana["analytics.py (Daily / Weekly)"]
+        Tools <--> T_Mem["memory.py (Store Preferences)"]
     end
 
-    T_Inv <--> DB[(SQLite — WAL Mode)]
+    T_Inv <--> DB[("SQLite (WAL Mode)")]
     T_Bill <--> DB
     T_Khata <--> DB
     T_Ana <--> DB
     T_Mem <--> DB
-    T_Doc --> Output[output/ — PDF & PPTX files]
+    T_Doc --> Output["output/ (PDF & PPTX files)"]
     Output --> TG
 ```
 
