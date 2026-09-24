@@ -1,0 +1,15 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv
+env
+*.log
+pdf_extracted_text.txt
+make_remaining_commits.ps1
+run_commits.py
+check.py
