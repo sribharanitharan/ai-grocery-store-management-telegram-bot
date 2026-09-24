@@ -204,13 +204,13 @@ Create a `.env` file in the root directory (or use `.env.example` as a template)
 
 ```env
 # Telegram Bot API Token (from @BotFather)
-TELEGRAM_BOT_TOKEN="your_telegram_bot_token_here"
+TELEGRAM_BOT_TOKEN="8813602605:AAGS4W_w2fWQJTDM6og3Lfp1NqaOiHnrA-k"
 
 # Google Gemini API Keys (multi-model rotation)
-GEMINI_API_KEY="your_primary_gemini_api_key_here"
+GEMINI_API_KEY="AQ.Ab8RN6I9G4c9wYbhva6mWyAL7fIKzWhCZT6LK527QqsmpEacRQ"
 
 # Groq API Key (LLaMA-3 fallback + Whisper voice transcription)
-GROQ_API_KEY="your_groq_api_key_here"
+GROQ_API_KEY="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"
 
 # Database Configuration (SQLite WAL mode)
 DATABASE_URL="sqlite:///nebula_store.db"
