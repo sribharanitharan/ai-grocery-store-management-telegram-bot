@@ -123,50 +123,6 @@ python main.py
 
 ---
 
-## 💬 Demo Prompt Sequence (for recording)
-
-Use these 5 prompts in order to demonstrate all major features in ~4–5 minutes:
-
-### Prompt 1 — Stock Receive + Preferences
-```
-Received 50 packets of Maggi Noodles 70g at cost 12 MRP 14.
-Also save my preference: default payment mode is UPI and default atta is Aashirvaad 5kg.
-```
-
-### Prompt 2 — Multi-Item Bill with Edit + PDF Invoice
-```
-Make a bill: 2kg Sugar, 1 default atta, 4 Maggi 70g, 1 Amul Butter 100g.
-Remove the sugar from the bill. Finalize via UPI and send the GST PDF invoice.
-```
-
-### Prompt 3 — Oversell Guard + Low-Stock Alert
-```
-Try to sell 200 packets of Maggi 70g — what happens?
-Then show what items are running low or need reordering.
-```
-
-### Prompt 4 — Khata (Credit Ledger) Cycle
-```
-Put ₹500 on Ramesh's credit ledger, record his ₹300 cash payment,
-and show his final outstanding balance.
-```
-
-### Prompt 5 — Analytics + PPTX Deck
-```
-Close today's sales summary and generate this week's sales analysis PowerPoint presentation deck.
-```
-
-### Prompt 6 — Memory Persistence Across Sessions
-```
-/new
-```
-*Then ask:*
-```
-What is my default payment mode and default atta brand?
-```
-
----
-
 ## 💬 Sample Multilingual Interactions
 
 ### Inventory & Restocking (Tanglish / Hinglish)
