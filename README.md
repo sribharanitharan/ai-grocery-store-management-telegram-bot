@@ -127,10 +127,21 @@ pip install -r requirements.txt
 
 ### 3. Configure Environment (`.env`)
 ```env
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
-GEMINI_API_KEY=your_gemini_api_key_here
-GROQ_API_KEY=your_groq_api_key_here
-DATABASE_URL=sqlite:///nebula_store.db
+# Telegram Bot API Token (from @BotFather)
+TELEGRAM_BOT_TOKEN="your_telegram_bot_token_here"
+
+# Google Gemini API Keys (multi-model rotation)
+GEMINI_API_KEY="your_primary_gemini_api_key_here"
+
+# Groq API Key (LLaMA-3 fallback + Whisper voice transcription)
+GROQ_API_KEY="your_groq_api_key_here"
+
+# Database Configuration (SQLite WAL mode)
+DATABASE_URL="sqlite:///nebula_store.db"
+
+# Store Identity
+SHOP_NAME="Nebula Kirana Store"
+
 ```
 
 ### 4. Run the Bot
