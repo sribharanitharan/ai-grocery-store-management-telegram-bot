@@ -127,10 +127,10 @@ pip install -r requirements.txt
 
 ### 3. Configure Environment (`.env`)
 ```env
-TELEGRAM_BOT_TOKEN=8813602605:AAGS4W_w2fWQJTDM6og3Lfp1NqaOiHnrA-k
-GEMINI_API_KEY=AQ.Ab8RN6I9G4c9wYbhva6mWyAL7fIKzWhCZT6LK527QqsmpEacRQ
-GROQ_API_KEY=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
-DATABASE_URL=sqlite:///nebula_store.db
+TELEGRAM_BOT_TOKEN=
+GEMINI_API_KEY=
+GROQ_API_KEY=
+DATABASE_URL=
 SHOP_NAME=Nebula Kirana Store
 
 
@@ -204,16 +204,16 @@ Create a `.env` file in the root directory (or use `.env.example` as a template)
 
 ```env
 # Telegram Bot API Token (from @BotFather)
-TELEGRAM_BOT_TOKEN="8813602605:AAGS4W_w2fWQJTDM6og3Lfp1NqaOiHnrA-k"
+TELEGRAM_BOT_TOKEN=""
 
 # Google Gemini API Keys (multi-model rotation)
-GEMINI_API_KEY="AQ.Ab8RN6I9G4c9wYbhva6mWyAL7fIKzWhCZT6LK527QqsmpEacRQ"
+GEMINI_API_KEY=""
 
 # Groq API Key (LLaMA-3 fallback + Whisper voice transcription)
-GROQ_API_KEY="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"
+GROQ_API_KEY=""
 
 # Database Configuration (SQLite WAL mode)
-DATABASE_URL="sqlite:///nebula_store.db"
+DATABASE_URL=""
 
 # Store Identity
 SHOP_NAME="Nebula Kirana Store"
