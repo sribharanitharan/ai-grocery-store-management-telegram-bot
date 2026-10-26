@@ -1,4 +1,4 @@
-# 🛒 Nebula Kirana Store — AI Operations Manager
+# 🛒 Store — AI Operations Manager
 
 > 🤖 **Live Telegram Bot**: [@nebula_store_ops_bot](https://t.me/nebula_store_ops_bot) — *Active & deployed for testing*  
 > 🔗 **Direct Telegram Link**: [https://t.me/nebula_store_ops_bot](https://t.me/nebula_store_ops_bot)
